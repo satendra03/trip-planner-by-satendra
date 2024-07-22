@@ -1,0 +1,130 @@
+{
+  "location": "Bhopal",
+  "duration": 3,
+  "budget": "Luxury",
+  "people": 4,
+  "hotels": [
+    {
+      "name": "Jehan Numa Palace Hotel",
+      "description": "A heritage hotel with opulent rooms, a sprawling garden, and a rooftop pool offering panoramic views of the city.",
+      "address": "1, Shamla Hills, Near Van Vihar National Park, Bhopal, Madhya Pradesh 462003",
+      "rating": 4.5,
+      "price": "₹15,000 - ₹30,000 per night",
+      "location": "https://goo.gl/maps/j12Q3Z5g5aL9R7T9",
+      "coordinates": "23.2594, 77.4096",
+      "image_url": "https://images.thrillophilia.com/image/upload/s--7i8t9L4h--/c_fill,f_auto,fl_progressive,h_600,q_auto,w_900/v1/images/photos/000/009/817/original/jehan_numa_palace_hotel_bhopal_hotel_exterior_view.jpg"
+    },
+    {
+      "name": "The Lalit, Bhopal",
+      "description": "A modern and luxurious hotel with elegant rooms, a rooftop pool, a spa, and multiple dining options.",
+      "address": "122, VIP Road, Near New Market, Bhopal, Madhya Pradesh 462003",
+      "rating": 4.2,
+      "price": "₹12,000 - ₹25,000 per night",
+      "location": "https://goo.gl/maps/bYfX1V85QmG96y3y",
+      "coordinates": "23.2582, 77.4118",
+      "image_url": "https://www.thelaLit.com/images/hotels/the-lalit-bhopal/home-slider-image-1.jpg"
+    },
+    {
+      "name": "Hotel Lake View Ashok",
+      "description": "A lakeside hotel with stunning views of the Upper Lake, comfortable rooms, and an outdoor pool.",
+      "address": "Shahpura, Near Van Vihar National Park, Bhopal, Madhya Pradesh 462016",
+      "rating": 4,
+      "price": "₹8,000 - ₹18,000 per night",
+      "location": "https://goo.gl/maps/2D19M97kC451wK7b",
+      "coordinates": "23.2438, 77.4253",
+      "image_url": "https://www.hotellakeviewashok.com/images/gallery/gallery_3.jpg"
+    }
+  ],
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Exploring the City's Heart",
+      "places": [
+        {
+          "name": "Bharat Bhavan",
+          "details": "A renowned cultural center showcasing Indian art, craft, and literature.",
+          "pricing": "Entry Fee: ₹50 per person",
+          "timings": "10:00 AM - 6:00 PM",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Bharat_Bhavan_Bhopal.jpg/1280px-Bharat_Bhavan_Bhopal.jpg",
+          "location": "https://goo.gl/maps/M1aJqM9J9L6YzY9b"
+        },
+        {
+          "name": "Rajwada",
+          "details": "A magnificent palace built in the 18th century, showcasing the grandeur of the Bhopal State.",
+          "pricing": "Entry Fee: ₹20 per person",
+          "timings": "9:00 AM - 6:00 PM",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Rajwada_Bhopal.jpg/1280px-Rajwada_Bhopal.jpg",
+          "location": "https://goo.gl/maps/2LhR6YfG84RjX2Q9"
+        },
+        {
+          "name": "Moti Masjid",
+          "details": "A beautiful mosque known for its intricate marble work and elegant architecture.",
+          "pricing": "Free Entry",
+          "timings": "5:00 AM - 8:00 PM",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Moti_Masjid_%28Bhopal%29.jpg/1280px-Moti_Masjid_%28Bhopal%29.jpg",
+          "location": "https://goo.gl/maps/6D14aU3p13wZ3g83"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Nature and History",
+      "places": [
+        {
+          "name": "Van Vihar National Park",
+          "details": "A lush green sanctuary home to various wildlife species, ideal for a relaxing day.",
+          "pricing": "Entry Fee: ₹50 per person",
+          "timings": "8:00 AM - 6:00 PM",
+          "image_url": "https://www.bhopal.nic.in/sites/default/files/styles/medium/public/vanvihar_national_park.jpg",
+          "location": "https://goo.gl/maps/Y1z3D7CqHq4y4wF7"
+        },
+        {
+          "name": "Upper Lake",
+          "details": "A serene lake offering scenic views, boat rides, and a chance to soak in the tranquility.",
+          "pricing": "Boat Ride: ₹100 - ₹500 per person",
+          "timings": "8:00 AM - 8:00 PM",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Upper_Lake_Bhopal_India.jpg/1280px-Upper_Lake_Bhopal_India.jpg",
+          "location": "https://goo.gl/maps/1S1N3bU47N26529v"
+        },
+        {
+          "name": "State Museum",
+          "details": "A comprehensive museum showcasing the history, art, and culture of Madhya Pradesh.",
+          "pricing": "Entry Fee: ₹20 per person",
+          "timings": "10:00 AM - 5:00 PM",
+          "image_url": "https://www.bhopal.nic.in/sites/default/files/styles/medium/public/state_museum.jpg",
+          "location": "https://goo.gl/maps/v3z4K9C931vD69s8"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Religious Sites and Culinary Delights",
+      "places": [
+        {
+          "name": "Taj-ul-Masjid",
+          "details": "One of the largest mosques in India, known for its grandeur and intricate architecture.",
+          "pricing": "Free Entry",
+          "timings": "5:00 AM - 8:00 PM",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Taj_ul_Masjid_Bhopal.jpg/1280px-Taj_ul_Masjid_Bhopal.jpg",
+          "location": "https://goo.gl/maps/C9M1nR2zW1Qm6K7g"
+        },
+        {
+          "name": "Birla Mandir",
+          "details": "A serene Hindu temple dedicated to Lord Vishnu, offering panoramic views of the city.",
+          "pricing": "Free Entry",
+          "timings": "6:00 AM - 8:00 PM",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Birla_Mandir_Bhopal_India.jpg/1280px-Birla_Mandir_Bhopal_India.jpg",
+          "location": "https://goo.gl/maps/2x6kQ76F4c4s776R"
+        },
+        {
+          "name": "Bhopal Food Tour",
+          "details": "Experience the rich culinary heritage of Bhopal with a guided food tour, sampling local delicacies.",
+          "pricing": "₹1,500 - ₹2,500 per person",
+          "timings": "11:00 AM - 3:00 PM",
+          "image_url": "https://www.holidify.com/images/cmsuploads/2019/02/08/best-food-in-bhopal_1549636789.jpg",
+          "location": "Various locations in the city"
+        }
+      ]
+    }
+  ]
+}
