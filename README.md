@@ -32,7 +32,7 @@ JourneyJolt is an innovative AI-driven trip planner that aims to transform your 
 
 To get started with JourneyJolt, follow these steps:
 
-1. Visit our [website](https://journeyjolt.com).
+1. Visit our [website](https://trip-planner-by-satendra.vercel.app/).
 2. Sign up to create your personalized travel profile.
 3. Input your travel preferences and let our AI generate your custom itinerary.
 
@@ -45,11 +45,11 @@ We love to hear from our users! If you have any questions, feedback, or need ass
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 ## Contributing
 
-We welcome contributions from the community. Please read our [Contributing Guidelines](CONTRIBUTING.md) to get started.
+We welcome contributions from the community.
 
 ## Acknowledgments
 
