@@ -14,9 +14,9 @@
     <a href="https://trip-planner-by-satendra.vercel.app/" target="_blank"><strong>← Visit Now →</strong></a>
     <br />
     <br />
-    <a href="https://i.ibb.co/QkSk539/Whats-App-Image-2024-11-14-at-01-51-59-0db751b0.jpg">Support Me</a>
+    <a href="https://i.ibb.co/QkSk539/Whats-App-Image-2024-11-14-at-01-51-59-0db751b0.jpg">Support Me (with Money LOL)</a>
     •
-    <a href="https://ig.me/m/_satendra_03">Report Bug</a>
+    <a href="https://github.com/satendra03/trip-planner-by-satendra/issues">Report Bug</a>
   </p>
 </div>
 
