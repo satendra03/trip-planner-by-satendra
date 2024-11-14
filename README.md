@@ -1,4 +1,3 @@
-</br>
 <div align="center">
   <h1 align="center">JourneyJolt</h1 >
   <a href="https://trip-planner-by-satendra.vercel.app/" target="_blank">
@@ -11,16 +10,21 @@
     Discover personalized itineraries and curated hotel recommendations tailored to your interests. Simplify travel planning with smart suggestions for top destinations and activities, making every trip easy and enjoyable.
     <br />
     <br />
-    <a href="https://trip-planner-by-satendra.vercel.app/" target="_blank"><strong>← Visit Now →</strong></a>
+    <a href="https://trip-planner-by-satendra.vercel.app/" target="_blank"><strong>Visit Now</strong></a>
     <br />
     <br />
-    <a href="https://i.ibb.co/QkSk539/Whats-App-Image-2024-11-14-at-01-51-59-0db751b0.jpg">Support Me (with Money LOL)</a>
-    •
+<!--     <a href="https://i.ibb.co/QkSk539/Whats-App-Image-2024-11-14-at-01-51-59-0db751b0.jpg">Support Me (with Money LOL)</a> -->
+<!--     • -->
     <a href="https://github.com/satendra03/trip-planner-by-satendra/issues">Report Bug</a>
   </p>
 </div>
+</br>
+<div align="center">
 
 ## About The Project
+
+</div>
+
 
 <div class="sampleImages" align="center" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
     <a href="https://ibb.co/gRX4Bcx"><img src="https://i.ibb.co/RDMjVJq/image.png" alt="image" style="border-radius: 10px; height: 170px; border: 0;"></a>
@@ -167,8 +171,12 @@ To fully integrate JourneyJolt with third-party services, you'll need to sign up
 
 
 
+</br>
+<div align="center">
 
 ## Installation
+
+</div>
 
 The installation process is straightforward. You can either clone the repository or download the zip file of the code.
 
@@ -219,8 +227,12 @@ The installation process is straightforward. You can either clone the repository
 
 
 
-<!-- ROADMAP -->
+</br>
+<div align="center">
+
 ## Roadmap
+
+</div>
 
 The roadmap represents the challenges and updates that I plan to implement in the future. As I continue to enhance the project, I encourage you to try completing these tasks as well and contribute to the project. Collaboration is welcome, and feel free to open pull requests with improvements or fixes. Here's what's coming next:
 
@@ -243,11 +255,12 @@ The roadmap represents the challenges and updates that I plan to implement in th
 
 
 
+</br>
+<div align="center">
 
-
-<!-- CONTRIBUTING -->
 ## Contributing
 
+</div>
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 If you have an idea or feature that would make this project even better, please feel free to contribute. Whether it's fixing bugs, adding new features, improving documentation, or anything else, your help is welcome!
@@ -293,18 +306,21 @@ If you have an idea or feature that would make this project even better, please 
 If you encounter a bug or have a suggestion to improve the project, please open an [issue](https://github.com/satendra03/trip-planner-by-satendra/issues) on the Issues page. If it's a new feature or improvement, tag it as an "enhancement".
 
 
+</br>
+<div align="center">
 
-
-<!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.md` for more information.
+</div>
+Distributed under the MIT License. See <code>LICENSE.md</code> for more information.
 
 
-
+</br>
+<div align="center">
 
 ## Contact Us
 
+</div>
 We’d love to hear from you! Whether you have a question, suggestion, or issue to report, feel free to get in touch with us.
 
 ### Ways to Contact Us:
