@@ -13,6 +13,7 @@ function Footer() {
           <Button variant="link" onClick={openInstagram}> <p className='sm:font-semibold sm:text-lg text-muted-foreground border-b-2'>Made by Satendra Kumar Parteti </p></Button>
         </Link>
       </h1>
+      <Link to="https://www.buymeacoffee.com/satendra03"><img style={{height:"40px"}} src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=satendra03&button_colour=ff8929&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00" /></Link>
     </div>
   );
 }
