@@ -1,3 +1,4 @@
+
 <div align="center">
   <h1 align="center">JourneyJolt</h1 >
   <a href="https://trip-planner-by-satendra.vercel.app/" target="_blank">
@@ -9,6 +10,8 @@
   <p align="center">
     Discover personalized itineraries and curated hotel recommendations tailored to your interests. Simplify travel planning with smart suggestions for top destinations and activities, making every trip easy and enjoyable.
     <br />
+    <br/>
+     <div><a href="https://app.eraser.io/workspace/IT31dyj1DiiagZtyJ47a?origin=share"><img src="https://img.shields.io/badge/Eraser-EC2C40.svg?style=for-the-badge&logo=Eraser&logoColor=white" alt="Documentation and Flow"> </img></a></div>
     <br />
     <a href="https://trip-planner-by-satendra.vercel.app/" target="_blank"><strong>Visit Now</strong></a>
     <br />
