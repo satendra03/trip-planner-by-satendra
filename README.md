@@ -159,6 +159,9 @@ To fully integrate JourneyJolt with third-party services, you'll need to sign up
     <li>After the project is created, click on the "Web" icon to create a new web app within the Firebase project.</li>
     <li>Follow the prompts to register your app. Firebase will provide you with the necessary configuration details during this step.</li>
     <li>Once the web app is created, go to your Firebase Console, and select the project you just created.</li>
+    <li>Create Firestore Databse, this will be the actaul database where we will store everything</li>
+    <li>In Firestore Databse, go to the "Rules" tab and edit the read and write rules so that you can save data <br /> <code>allow read, write: if request.time < timestamp.date(2099, 8, 18);</code>
+    </li>
     <li>Navigate to the "Project settings" by clicking on the gear icon near the top left corner.</li>
     <li>In the "General" tab, you will find the credentials for your Firebase project. These credentials are needed to set up Firebase in your React project.</li>
     <li>Copy the credentials provided by Firebase (e.g., API key, auth domain, etc.) and paste them into your `.env` file with the following format:</li>
