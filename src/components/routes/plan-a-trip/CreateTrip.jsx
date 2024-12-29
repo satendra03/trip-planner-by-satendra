@@ -164,7 +164,7 @@ function CreateTrip() {
           <Input
             placeholder="Ex: 2"
             type="number"
-            min="0"
+            min="1"
             max="5"
             name="noOfDays"
             required
