@@ -2,7 +2,7 @@
 <div align="center">
   <h1 align="center">JourneyJolt</h1 >
   <a href="https://trip-planner-by-satendra.vercel.app/" target="_blank">
-    <img src="https://i.ibb.co/YLK0qVx/image.png" style="border-radius: 10px;" alt="Logo" width="" height="250">
+    <img src="https://i.ibb.co/X7N17ps/main.png" style="border-radius: 10px;" alt="Logo" width="" height="250">
   </a>
 
   <h3>AI-Based Trip Planner</h3>
@@ -33,12 +33,12 @@
 
 
 <div class="sampleImages" align="center" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-    <a href="https://ibb.co/gRX4Bcx"><img src="https://i.ibb.co/RDMjVJq/image.png" alt="image" style="border-radius: 10px; height: 170px; border: 0;"></a>
-    <a href="https://ibb.co/f1zjdLn"><img src="https://i.ibb.co/Ss4FwGd/image-2.png" alt="image-2" style="border-radius: 10px; height: 170px; border: 0;"></a>
-    <a href="https://ibb.co/yySg2kP"><img src="https://i.ibb.co/ncCQp1m/image-1.png" alt="image-1" style="border-radius: 10px; height: 170px; border: 0;"></a>
-    <a href="https://ibb.co/26srCZS"><img src="https://i.ibb.co/hMZN4Yc/image-3.png" alt="image-3" style="border-radius: 10px; height: 170px; border: 0;"></a>
-    <a href="https://ibb.co/jfty8cW"><img src="https://i.ibb.co/Khn25ML/image-5.png" alt="image-5" style="border-radius: 10px; height: 170px; border: 0;"></a>
-    <a href="https://ibb.co/r5MtJxg"><img src="https://i.ibb.co/zPb5wX1/image-4.png" alt="image-4" style="border-radius: 10px; height: 170px; border: 0;"></a>
+    <a href="https://ibb.co/gRX4Bcx"><img src="https://i.ibb.co/X7N17ps/main.png" alt="image" style="border-radius: 10px; height: 170px; border: 0;"></a>
+    <a href="https://ibb.co/f1zjdLn"><img src="https://i.ibb.co/TbHgn5W/form.png" alt="image-2" style="border-radius: 10px; height: 170px; border: 0;"></a>
+    <a href="https://ibb.co/yySg2kP"><img src="https://i.ibb.co/QDkGLrS/trip.png" alt="image-1" style="border-radius: 10px; height: 170px; border: 0;"></a>
+    <a href="https://ibb.co/26srCZS"><img src="https://i.ibb.co/bPcmZwX/all.png" alt="image-3" style="border-radius: 10px; height: 170px; border: 0;"></a>
+<!--     <a href="https://ibb.co/jfty8cW"><img src="https://i.ibb.co/Khn25ML/image-5.png" alt="image-5" style="border-radius: 10px; height: 170px; border: 0;"></a> -->
+<!--     <a href="https://ibb.co/r5MtJxg"><img src="https://i.ibb.co/zPb5wX1/image-4.png" alt="image-4" style="border-radius: 10px; height: 170px; border: 0;"></a> -->
 </div>
 </br>
 
