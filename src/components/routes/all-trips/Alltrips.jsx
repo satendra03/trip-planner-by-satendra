@@ -15,27 +15,40 @@ function Alltrips() {
       where("userEmail", "==", user?.email)
     );
     const querySnapshot = await getDocs(Query);
+    const trips = [];
     querySnapshot.forEach((doc) => {
-      setAllTrips((prev) => [...prev, doc.data()]);
+      trips.push(doc.data());
     });
+
+    const reversedTrips = trips.reverse();
+    setAllTrips(reversedTrips);
   };
   useEffect(() => {
     getAllTrips();
   }, [user]);
 
   return (
-    <div className="">
-      <h1 className="w-full font-medium text-lg text-center sm:text-left sm:text-2xl sm:font-bold mb-3">
+    <div className="mb-10">
+      <h1 className="text-3xl md:text-5xl font-bold text-center my-5 md:my-10 bg-gradient-to-b from-primary/90 to-primary/60 bg-clip-text text-transparent">
         All Trips
       </h1>
-      <div className="container flex gap-3 flex-wrap items-center">
-        {allTrips?.length > 0 ? (allTrips?.map((trip, idx) => (
-          <Link key={idx} to={"/my-trips/" + trip.tripId}>
-            <AlltripsCard trip={trip} />
-          </Link> )
-        )) : [1,2,3,4].map((ite,index)=>(
-          <div className="w-36 min-h-44 sm:w-32 md:w-44 rounded-md border border-black/10 p-1 bg-slate-400 animate-pulse"></div>
-        )) }
+      <div className="flex gap-3 flex-wrap justify-evenly items-center">
+        {allTrips?.length > 0
+          ? allTrips?.map((trip, idx) => (
+              <Link
+                key={idx}
+                to={"/my-trips/" + trip.tripId}
+                className="w-full md:w-[48%]"
+              >
+                <AlltripsCard trip={trip} />
+              </Link>
+            ))
+          : [1, 2, 3, 4].map((item, index) => (
+              <div
+                key={index}
+                className="w-[48%] h-52 rounded-md border bg-card-foreground/50 animate-pulse"
+              ></div>
+            ))}
       </div>
     </div>
   );

@@ -2,31 +2,38 @@ import React, { useContext } from "react";
 import { useMediaQuery } from "react-responsive";
 import { LogInContext } from "@/Context/LogInContext/Login";
 import PlaceCards from "../Cards/PlaceCards";
+import { useRefContext } from "@/Context/RefContext/RefContext";
 
 function Placescard() {
-  const isMobile = useMediaQuery({ query: "(max-width: 445px)" });
-  const isSmall = useMediaQuery({ query: "(max-width: 640px)" });
+  // const isMobile = useMediaQuery({ query: "(max-width: 445px)" });
+  // const isSmall = useMediaQuery({ query: "(max-width: 640px)" });
 
   const { trip } = useContext(LogInContext);
   const itinerary = trip?.tripData?.itinerary;
   const city = trip?.tripData?.location;
 
+  const { placesRef } = useRefContext();
+
   return (
     <>
       {itinerary?.map((day, idx) => {
         return (
-          <div key={idx} className="main-container mt-5 sm:mt-10">
-            <div className="heading text-center sm:text-left">
-              <h3 className="font-medium text-lg tex sm:text-2xl sm:font-bold mt-2">
+          <div ref={placesRef} key={idx} className="main-container mt-5 sm:mt-10">
+            <div className="places-heading text-center my-5">
+              <h3 className="md:text-4xl font-black bg-gradient-to-b from-blue-400 to-blue-700 bg-clip-text text-center text-transparent">
                 Day {day.day}
               </h3>
-              <h4 className="font-black text-base sm:text-2xl text-orange-400">
+              <h4 className="md:text-3xl text-center text-primary/80">
                 {day.title}
               </h4>
             </div>
-            <div className="cards sm:grid sm:gap-4 sm:grid-cols-2">
+            <div className="cards flex flex-col md:flex-row flex-wrap gap-5">
               {day.places.map((place, idx) => {
-                return <PlaceCards key={idx} place={place} />;
+                return (
+                  <div key={idx} className="md:w-[48%]">
+                    <PlaceCards className="place-card" place={place} />
+                  </div>
+                );
               })}
             </div>
           </div>

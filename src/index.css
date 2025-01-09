@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('/fonts/WEB/css/satoshi.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -62,8 +65,13 @@
 @layer base {
   * {
     @apply border-border;
+    font-family: Satoshi-Regular, "Manrope", 'Arial Narrow', Arial, sans-serif;
   }
   body {
     @apply bg-background text-foreground;
   }
+}
+
+::-webkit-scrollbar{
+  display: none;
 }

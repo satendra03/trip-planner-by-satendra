@@ -26,8 +26,9 @@ import { LogInContext } from "@/Context/LogInContext/Login";
 import { db } from "@/Service/Firebase";
 import { doc, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import ReactGoogleAutocomplete from "react-google-autocomplete";
 
-function CreateTrip() {
+function CreateTrip({createTripPageRef}) {
   const [place, setPlace] = useState("");
   const [formData, setFormData] = useState([]);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -75,8 +76,8 @@ function CreateTrip() {
       userEmail: User?.email,
     });
     setIsLoading(false);
-    localStorage.setItem('Trip', JSON.stringify(TripData));
-    navigate('/my-trips/'+id);
+    localStorage.setItem("Trip", JSON.stringify(TripData));
+    navigate("/my-trips/" + id);
   };
 
   const generateTrip = async () => {
@@ -105,7 +106,6 @@ function CreateTrip() {
       .replace(/{People}/g, formData?.People)
       .replace(/{Budget}/g, formData?.Budget);
 
-
     try {
       const toastId = toast.loading("Generating Trip", {
         icon: "✈️",
@@ -128,24 +128,47 @@ function CreateTrip() {
   };
 
   return (
-    <div className="mt-10">
-      <div className="text text-center md:text-left">
-        <h2 className="text-2xl md:text-4xl font-bold">
-          Share Your Travel Preferences 🌟🚀
+    <div ref={createTripPageRef} className="mt-10 text-center">
+      <div className="text">
+        <h2 className="text-3xl md:text-5xl font-bold mb-5 flex items-center justify-center">
+          <span className="hidden md:block">🚀</span>{" "}
+          <span className="bg-gradient-to-b from-primary/90 to-primary/60 bg-clip-text text-transparent">
+            Share Your Travel Preferences{" "}
+          </span>{" "}
+          <span className="hidden md:block">🚀</span>
         </h2>
-        <p className="text-sm text-gray-600 font-medium mt-3">
-          Help us craft your perfect adventure with just a few details.
-          JourneyJolt will generate a tailored itinerary based on your
-          preferences.
+        <p className="opacity-90 mx-auto text-center text-md md:text-xl font-medium tracking-tight text-primary/80">
+          Embark on your dream adventure with just a few simple details. <br />
+          <span className="bg-gradient-to-b text-2xl from-blue-400 to-blue-700 bg-clip-text text-center text-transparent">
+            JourneyJolt
+          </span>{" "}
+          <br /> will curate a personalized itinerary, crafted to match your
+          unique preferences!
         </p>
       </div>
 
-      <div className="form mt-10 flex flex-col gap-10 md:gap-20 ">
+      <div className="form mt-14 flex flex-col gap-16 md:gap-20 ">
         <div className="place">
-          <h2 className="font-semibold text-md md:text-lg mb-3 text-center md:text-left">
-            Where do you want to Explore? 🏖️
+          <h2 className="font-semibold text-lg md:text-xl mb-3 ">
+            <span className="bg-gradient-to-b from-primary/90 to-primary/60 bg-clip-text text-transparent">
+              Where do you want to Explore?
+            </span>{" "}
+            🏖️
           </h2>
-          <GooglePlacesAutocomplete
+          <ReactGoogleAutocomplete
+            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 text-center"
+            apiKey={import.meta.env.VITE_GOOGLE_MAP_API_KEY}
+            autoFocus
+            onPlaceSelected={(place) => {
+              setPlace(place);
+              handleInputChange("location", place.formatted_address);
+            }}
+            placeholder="Enter a City"
+          />
+
+          {/* Not using this as this was not accepting style and all */}
+          {/* <GooglePlacesAutocomplete
+            className="bg-red-500"
             apiKey={import.meta.env.VITE_GOOGLE_MAP_API_KEY}
             selectProps={{
               value: place,
@@ -153,15 +176,20 @@ function CreateTrip() {
                 setPlace(place);
                 handleInputChange("location", place.label);
               },
+              placeholder: "Search for a location...",
             }}
-          />
+          /> */}
         </div>
 
         <div className="day">
-          <h2 className="font-semibold text-md md:text-lg mb-3 text-center md:text-left">
-            How long is your Trip? 🕜
+          <h2 className="font-semibold text-lg md:text-xl mb-3 ">
+            <span className="bg-gradient-to-b from-primary/90 to-primary/60 bg-clip-text text-transparent">
+              How long is your Trip?
+            </span>{" "}
+            🕜
           </h2>
           <Input
+            className="text-center"
             placeholder="Ex: 2"
             type="number"
             min="1"
@@ -173,23 +201,34 @@ function CreateTrip() {
         </div>
 
         <div className="budget">
-          <h2 className="font-semibold text-md md:text-lg mb-3 text-center md:text-left">
-            What is your Budget? 💳
+          <h2 className="font-semibold text-lg md:text-xl mb-3 ">
+            <span className="bg-gradient-to-b from-primary/90 to-primary/60 bg-clip-text text-transparent">
+              {" "}
+              What is your Budget?
+            </span>{" "}
+            💳
           </h2>
-          <div className="options grid grid-cols-1 gap-5 md:grid-cols-3 cursor-pointer">
+          <div className="options grid grid-cols-1 gap-5 md:grid-cols-3">
             {SelectBudgetOptions.map((item) => {
               return (
                 <div
                   onClick={(e) => handleInputChange("Budget", item.title)}
                   key={item.id}
-                  className={`option transition-all hover:scale-110 p-4 h-32 flex items-center justify-center flex-col border rounded-lg hover:shadow-lg
-                  ${formData?.Budget == item.title && "border-black shadow-xl"}
+                  className={`option cursor-pointer transition-all hover:scale-110 p-4 h-32 flex items-center justify-center flex-col border hover:shadow-foreground/10 hover:shadow-md rounded-lg
+                  ${
+                    formData?.Budget == item.title &&
+                    "border border-foreground/80"
+                  }
                   `}
                 >
                   <h3 className="font-bold text-[15px] md:font-[18px]">
-                    {item.icon} {item.title} :
+                    {item.icon} <span className={`
+                      ${formData?.Budget == item.title ? 
+                      "bg-gradient-to-b from-blue-400 to-blue-700 bg-clip-text text-center text-transparent" :
+                      ""}
+                      `}>{item.title}</span>
                   </h3>
-                  <p className="text-gray-500 font-medium">{item.desc}</p>
+                  <p className="bg-gradient-to-b from-primary/90 to-primary/60 bg-clip-text text-transparent">{item.desc}</p>
                 </div>
               );
             })}
@@ -197,27 +236,31 @@ function CreateTrip() {
         </div>
 
         <div className="people">
-          <h2 className="font-semibold text-md md:text-lg mb-3 text-center md:text-left">
-            Who are you traveling with? 🚗
+          <h2 className="font-semibold  text-lg md:text-xl mb-3 ">
+            <span className="bg-gradient-to-b from-primary/90 to-primary/60 bg-clip-text text-transparent">
+              Who are you traveling with?{" "}
+            </span>{" "}
+            🚗
           </h2>
-          <div className="options grid grid-cols-1 gap-5 md:grid-cols-3 cursor-pointer">
+          <div className="options grid grid-cols-1 gap-5 md:grid-cols-3">
             {SelectNoOfPersons.map((item) => {
               return (
                 <div
                   onClick={(e) => handleInputChange("People", item.no)}
                   key={item.id}
-                  className={`option transition-all hover:scale-110 p-4 h-32 flex items-center justify-center flex-col border rounded-lg hover:shadow-lg
-                    ${
-                      formData?.People == item.no &&
-                      "border border-black shadow-xl"
-                    }
+                  className={`option cursor-pointer transition-all hover:scale-110 p-4 h-32 flex items-center justify-center flex-col border rounded-lg hover:shadow-foreground/10 hover:shadow-md
+                    ${formData?.People == item.no && "border border-foreground/80"}
                   `}
                 >
                   <h3 className="font-bold text-[15px] md:font-[18px]">
-                    {item.icon} {item.title} :
+                    {item.icon} <span className={`
+                      ${formData?.People == item.no ? 
+                      "bg-gradient-to-b from-blue-400 to-blue-700 bg-clip-text text-center text-transparent" :
+                      ""}
+                      `}>{item.title}</span>
                   </h3>
-                  <p className="text-gray-500 font-medium">{item.desc}</p>
-                  <p className="text-gray-500 text-sm font-normal">{item.no}</p>
+                  <p className="bg-gradient-to-b from-primary/90 to-primary/60 bg-clip-text text-transparent">{item.desc}</p>
+                  <p className="bg-gradient-to-b from-primary/90 to-primary/60 bg-clip-text text-transparent">{item.no}</p>
                 </div>
               );
             })}
@@ -230,7 +273,7 @@ function CreateTrip() {
           {isLoading ? (
             <AiOutlineLoading3Quarters className="h-6 w-6 animate-spin" />
           ) : (
-            "Plan A Trip"
+            "Let's Go 🌏"
           )}
         </Button>
       </div>
@@ -242,12 +285,12 @@ function CreateTrip() {
       >
         <DialogContent>
           <DialogHeader>
-            <DialogTitle className="text-xl font-bold">
+            <DialogTitle className="text-xl font-bold text-center bg-gradient-to-b from-primary/90 to-primary/60 bg-clip-text text-transparent">
               {user ? "Thank you for LogIn" : "Sign In to Continue"}
             </DialogTitle>
             <DialogDescription>
               <span className="flex gap-2">
-                <span>
+                <span className="text-center w-full opacity-90 mx-auto tracking-tight text-primary/80">
                   {user
                     ? "Logged In Securely to JourneyJolt with Google Authentication"
                     : "Sign In to JourneyJolt with Google Authentication Securely"}
@@ -266,9 +309,11 @@ function CreateTrip() {
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>
-            <Button variant="outline" className="w-full">
-              <DialogClose>Close</DialogClose>
-            </Button>
+            <DialogClose className="w-full">
+              <Button variant="outline" className="w-full">
+                Close
+              </Button>
+            </DialogClose>
           </DialogFooter>
         </DialogContent>
       </Dialog>

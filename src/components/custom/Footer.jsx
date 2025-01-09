@@ -1,21 +1,73 @@
-import React from 'react';
-import { Button } from '../ui/button';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Button } from "../ui/button";
+import { Link } from "react-router-dom";
+import {
+  AiFillGithub,
+  AiFillInstagram,
+  AiFillLinkedin,
+  AiFillMail,
+  AiFillTwitterCircle,
+} from "react-icons/ai";
 
-function Footer() {
-  const openInstagram = () => {
-    window.open('https://github.com/satendra03', '_blank', 'noopener,noreferrer');
-  };
+function Footer({ footerRef }) {
+  const socialIcons = [
+    {
+      name: "GitHub",
+      icon: <AiFillGithub />,
+      link: "https://github.com/satendra03",
+    },
+    {
+      name: "Linkedin",
+      icon: <AiFillLinkedin />,
+      link: "https://linkedin.com/in/connect-satendra",
+    },
+    {
+      name: "Instagram",
+      icon: <AiFillInstagram />,
+      link: "https://instagram.com/_satendra_03",
+    },
+    {
+      name: "Mail",
+      icon: <AiFillMail />,
+      link: "mailto:satendrakumarparteti.work@gmail.com",
+    },
+    {
+      name: "Twitter",
+      icon: <AiFillTwitterCircle />,
+      link: "https://twitter.com/satendra_03",
+    },
+  ];
   return (
-    <div className="footer min-h-32 w-full flex text-muted-foreground items-center justify-center p-4">
-      <h1>
-        <Link to='https://github.com/satendra03' target='_blank' rel='noreferrer'>
-          <Button variant="link" onClick={openInstagram}> <p className='sm:font-semibold sm:text-lg text-muted-foreground border-b-2'>Made by Satendra Kumar Parteti </p></Button>
-        </Link>
-      </h1>
-      <Link to="https://www.buymeacoffee.com/satendra03"><img style={{height:"40px"}} src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=satendra03&button_colour=ff8929&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00" /></Link>
+    <div
+      ref={footerRef}
+      className="footer w-full flex flex-col text-muted-foreground items-center justify-center md:p-4 py-2 border-t"
+    >
+      <p className="sm:font-semibold sm:text-lg  bg-gradient-to-b from-primary/90 to-primary/60 bg-clip-text text-transparent">
+        Made by Satendra Kumar Parteti
+      </p>
+      <div className="logos flex items-center justify-center gap-5 w-full">
+        {socialIcons.map((item, index) => {
+          return (
+            <Link
+              key={index}
+              to={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {item.icon}
+            </Link>
+          );
+        })}
+      </div>
+      {/* <div className="more text-sm text-center mt-5 bg-gradient-to-b from-primary/90 to-primary/60 bg-clip-text text-transparent">
+      Honestly, I have no idea what's cooking here! If something’s broken or needs fixing, just ping me and save me from blissful ignorance!
+      </div> */}
     </div>
   );
 }
 
 export default Footer;
+
+
+
+

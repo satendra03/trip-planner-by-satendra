@@ -1,15 +1,14 @@
 import { getCityDetails, PHOTO_URL } from "@/Service/GlobalApi";
 import React, { useEffect, useState } from "react";
 
-function AlltripsCard({ trip }) {
-//   const { trip } = useContext(LogInContext);
-
-    // console.log(trip);
+const AlltripsCard = ({ trip }) => {
   const [cityDets, setCityDets] = useState([]);
   const [photos, setPhotos] = useState("");
   const [Url, setUrl] = useState("");
 
   const city = trip?.tripData?.location;
+
+  
 
   const getCityInfo = async () => {
     const data = {
@@ -34,24 +33,25 @@ function AlltripsCard({ trip }) {
 
   return (
     <>
-      <div className="main bg-gray-100 hover:scale-105 hover:cursor-pointer transition-all hover:shadow-xl w-36 min-h-32 sm:w-32 md:w-44 rounded-md border border-black/10 p-1">
-        <div className="img h-[80%] min-h-32 w-full border border-black/5 overflow-hidden rounded-md">
+      <div  className="card-card border-foreground/20 p-1 h-full flex flex-col gap-3">
+        <div className="img relative h-full rounded-lg overflow-hidden duration-500 group">
           <img
             src={Url || "/logo.png"}
-            alt="trip"
-            className="w-full h-full object-cover"
+            className="h-56 w-full object-cover group-hover:scale-110 duration-500 transition-all"
+            alt={Url || "/logo.png"}
           />
-        </div>
-        <div className="text flex flex-col">
-          <h2 className="font-semibold sm:font-bold lg:font-bold text-xs text-center">
-            {trip.userSelection.location}
-          </h2>
-          <h2 className="font-normal sm:font-semibold lg:font-bold text-xs text-center text-muted-foreground">
-            {trip.userSelection.noOfDays} Days Trip
-          </h2>
-          <h2 className="font-normal sm:font-semibold lg:font-bold text-xs text-center text-muted-foreground">with {" "}
-            {trip.userSelection.Budget} Level Budget
-          </h2>
+          <div className="absolute inset-0 bg-background/90 flex flex-col items-center justify-center md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+            <span className="bg-gradient-to-b text-lg from-primary/90 to-primary/60 bg-clip-text text-transparent font-bold">
+              {trip.userSelection.location}
+            </span>
+            <span className="bg-gradient-to-b text-lg from-primary/90 to-primary/60 bg-clip-text text-transparent font-bold">
+              {trip.userSelection.noOfDays}{" "}
+              {trip.userSelection.noOfDays > 1 ? "Days" : "Day"}
+            </span>
+            <span className="bg-gradient-to-b text-lg from-primary/90 to-primary/60 bg-clip-text text-transparent font-bold">
+              {trip.userSelection.Budget} Budget
+            </span>
+          </div>
         </div>
       </div>
     </>

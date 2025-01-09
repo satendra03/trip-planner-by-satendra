@@ -56,7 +56,62 @@ function PlaceCards({ place }) {
 
   return (
     <>
-      <div className="main ">
+      <Link
+        className="w-full"
+        target="_blank"
+        to={
+          location
+            ? location
+            : `https://www.google.com/maps/search/${place.name},${city}`
+        }
+      >
+        <Card className="border-foreground/20 p-1 h-full flex flex-col gap-3 hover:scale-105 duration-300">
+          <div className="img h-full rounded-lg">
+            <img
+              src={Url || "/logo.png"}
+              // src={place.image_url}
+              className="h-80 w-full object-cover"
+              alt=""
+            />
+          </div>
+          <div className="text-content w-full flex items-center gap-3 justify-between flex-col h-full">
+            <CardHeader className="w-full">
+              <CardTitle className="opacity-90 w-full text-center text-xl font-black text-primary/80 md:text-3xl">
+                {place.name}
+              </CardTitle>
+              <CardDescription className="line-clamp-2 tracking-wide opacity-90 w-full text-center text-sm text-primary/80 md:text-md">
+                {place.details}
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="w-full">
+              <div className="places-details">
+                <span className="font-medium text-primary/80 opacity-90 text-sm md:text-base tracking-wide">
+                  🕒 Timings: {place.timings}{" "}
+                </span>
+                <br />
+                <span className="font-medium text-primary/80 opacity-90 text-sm md:text-base tracking-wide">
+                  💵 Price:
+                  {place.pricing}{" "}
+                </span>{" "}
+                <br />
+                <span className="font-medium text-primary/80 opacity-90 text-sm md:text-base tracking-wide line-clamp-1">
+                  📍 Location: {address ? address : place.address}
+                </span>
+              </div>
+            </CardContent>
+          </div>
+        </Card>
+      </Link>
+    </>
+  );
+}
+
+export default PlaceCards;
+
+// grid mt-4 hover:scale-105 transition-all text-left grid-rows-1 grid-cols-[30%_1fr] h-20 custom-500:grid-cols-[25%_1fr] sm:grid-cols-[35%_1fr] custom-435:h-24 gap-2 items-center sm:items-start p-2 sm:h-auto bg-gray-100 border border-black/10
+
+{
+  /* <div className="main ">
         {isSmall ? (
           <Popover className="">
             <PopoverTrigger>
@@ -158,9 +213,5 @@ function PlaceCards({ place }) {
             </Card>
           </Link>
         )}
-      </div>
-    </>
-  );
+      </div> */
 }
-
-export default PlaceCards;

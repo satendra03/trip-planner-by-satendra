@@ -3,14 +3,14 @@ import Hotelcard from "./Hotelcard";
 
 function Hotels() {
   return (
-    <>
-      <h2 className="mt-10 sm:mt-20 text-3xl sm:text-4xl font-extrabold text-center sm:text-left">
+    <div className=" my-[15vh]">
+      <h2 className="opacity-90 mx-auto text-center text-3xl font-black text-primary/80 md:text-5xl">
         Hotels
       </h2>
       <div className="main-info mt-2 md:mt-4">
-        <Hotelcard />
+        <Hotelcard  />
       </div>
-    </>
+    </div>
   );
 }
 
