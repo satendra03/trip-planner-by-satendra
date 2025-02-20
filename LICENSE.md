@@ -1,21 +1,13 @@
-MIT License
+Private License
 
-Copyright (c) [2024] [Satendra Kumar Parteti]
+Copyright (c) 2025 Satendra Kumar Parteti
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+All rights reserved.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+This software and its associated files (the "Software") are the exclusive property of Satendra Kumar Parteti. Unauthorized use, copying, modification, distribution, or any form of reproduction of this Software is strictly prohibited.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+The Software is provided for personal or private use only by the author. No person, entity, or organization is granted permission to use, distribute, sublicense, or modify this Software in any manner.
+
+Any unauthorized use of this Software is strictly forbidden and may result in legal consequences. The author holds no liability for any unauthorized or illegal use of the Software.
+
+You are solely responsible for any unauthorized use, and the author disclaims all liability arising from any such actions.
