@@ -1,9 +1,16 @@
-
 <div align="center">
   <h1 align="center">JourneyJolt</h1 >
   <a href="https://trip-planner-by-satendra.vercel.app/" target="_blank">
     <img src="https://i.ibb.co/X7N17ps/main.png" style="border-radius: 10px;" alt="Logo" width="" height="250">
   </a>
+
+  <div align="center">
+  <h2 align="center">Stats</h2 >
+  
+  ![GitHub forks](https://img.shields.io/github/forks/satendra03/trip-planner-by-satendra) <br/>
+  ![GitHub Repo stars](https://img.shields.io/github/stars/satendra03/trip-planner-by-satendra) <br/>
+  ![GitHub watchers](https://img.shields.io/github/watchers/satendra03/trip-planner-by-satendra)  
+</div>
 
   <h3>AI-Based Trip Planner</h3>
 
