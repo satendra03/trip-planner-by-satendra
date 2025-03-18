@@ -1,4 +1,11 @@
 <div align="center">
+  <h1>Project Discontinued (Temporarily) 🚨</h1>
+  <h3>This project is currently discontinued as it has started incurring charges. I will try to make some changes to optimize it. Till then, it remains inactive.</h3>
+  <h3>Thank you for your support!</h3>
+</div>
+<br/>
+<br/>
+<div align="center">
   <h1 align="center">JourneyJolt</h1 >
   <a href="https://trip-planner-by-satendra.vercel.app/" target="_blank">
     <img src="https://i.ibb.co/X7N17ps/main.png" style="border-radius: 10px;" alt="Logo" width="" height="250">
