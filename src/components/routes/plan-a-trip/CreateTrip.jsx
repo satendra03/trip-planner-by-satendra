@@ -1,6 +1,6 @@
 import { Input } from "@/components/ui/input";
 import React, { useContext, useEffect, useState } from "react";
-import GooglePlacesAutocomplete from "react-google-places-autocomplete";
+import Autocomplete from "react-google-autocomplete";
 import {
   PROMPT,
   SelectBudgetOptions,
@@ -155,30 +155,16 @@ function CreateTrip({createTripPageRef}) {
             </span>{" "}
             🏖️
           </h2>
-          <ReactGoogleAutocomplete
-            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 text-center"
-            apiKey={import.meta.env.VITE_GOOGLE_MAP_API_KEY}
-            autoFocus
-            onPlaceSelected={(place) => {
-              setPlace(place);
-              handleInputChange("location", place.formatted_address);
-            }}
-            placeholder="Enter a City"
-          />
 
-          {/* Not using this as this was not accepting style and all */}
-          {/* <GooglePlacesAutocomplete
-            className="bg-red-500"
-            apiKey={import.meta.env.VITE_GOOGLE_MAP_API_KEY}
-            selectProps={{
-              value: place,
-              onChange: (place) => {
-                setPlace(place);
-                handleInputChange("location", place.label);
-              },
-              placeholder: "Search for a location...",
-            }}
-          /> */}
+{/* This is working */}
+<Autocomplete
+  apiKey={import.meta.env.VITE_GOOGLE_MAP_API_KEY}
+  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 text-center"
+  onPlaceSelected={(place) => {
+    setPlace(place);
+    handleInputChange("location", place.formatted_address);
+  }}
+/>
         </div>
 
         <div className="day">

@@ -1,8 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
 import { LogInContext } from "@/Context/LogInContext/Login";
 import Marquee from "../ui/marquee";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 function Hero({ heroRef }) {
   const { isAuthenticated } = useContext(LogInContext);
@@ -73,6 +75,52 @@ function Hero({ heroRef }) {
       link: "https://en.wikipedia.org/wiki/Stonehenge",
     },
   ];
+
+  // Trip Stats
+// const getTotals = async () => {
+//   try {
+//     const db = getFirestore();
+
+//     const tripsRef = collection(db, "Trips");
+//     const usersRef = collection(db, "Users");
+
+//     const tripsSnapshot = await getDocs(tripsRef);
+//     const totalTrips = tripsSnapshot.size;
+
+//     const usersSnapshot = await getDocs(usersRef);
+//     const totalUsers = usersSnapshot.size;
+//     const usersArray = usersSnapshot.docs.map(doc => doc.data());
+//     console.log("Users:", usersArray);
+
+//     return { totalTrips, totalUsers };
+//   } catch (error) {
+//     console.error("Error fetching totals: ", error);
+//     throw error;
+//   }
+// };
+// const [loading, setLoading] = useState(true);
+// const [trips, setTrips] = useState(0);
+// const [users, setUsers] = useState(0);
+// useEffect(() => {
+//   getTotals()
+//     .then(({ totalTrips, totalUsers, usersArray }) => {
+//       setTrips(totalTrips);
+//       setUsers(totalUsers);
+//       console.log("total Trips", totalTrips);
+//       console.log("total Users", totalUsers);
+//     })
+//     .then(() => setLoading(false))
+//     .catch((error) => console.error("Failed to fetch totals", error));
+// }, []);
+// if (loading) {
+//   return (
+//     <div className="flex items-center flex-col text-center justify-center h-[70vh]">
+//       <div className="text px-10 md:px-40 flex flex-col items-center justify-center gap-4">
+//         <h1><AiOutlineLoading3Quarters size={80} className="animate-spin" /></h1>
+//       </div>
+//     </div>
+//   );
+// }
 
 
   const first = images.slice(0, images.length / 2);
