@@ -18,7 +18,7 @@ function Mytrips() {
     const docSnap = await getDoc(docRef);
 
     if(docSnap.exists()){
-      // console.log("Document data:", docSnap.data());
+      console.log("Document data:", docSnap.data());
       setTrip(docSnap.data());
     } else {
       toast.error('No Such Trip');

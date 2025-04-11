@@ -43,9 +43,12 @@ function Footer({ footerRef }) {
       className="footer w-full flex flex-col text-muted-foreground items-center justify-center md:p-4 py-2 border-t"
     >
       <p className="sm:font-semibold sm:text-lg  bg-gradient-to-b from-primary/90 to-primary/60 bg-clip-text text-transparent">
-        Made by Satendra Kumar Parteti
+        JourneyJolt &copy; 2025
       </p>
-      <div className="logos flex items-center justify-center gap-5 w-full">
+      {/* <p className="sm:font-semibold sm:text-lg  bg-gradient-to-b from-primary/90 to-primary/60 bg-clip-text text-transparent">
+        Made by Satendra Kumar Parteti
+      </p> */}
+      {/* <div className="logos flex items-center justify-center gap-5 w-full">
         {socialIcons.map((item, index) => {
           return (
             <Link
@@ -58,7 +61,7 @@ function Footer({ footerRef }) {
             </Link>
           );
         })}
-      </div>
+      </div> */}
       {/* <div className="more text-sm text-center mt-5 bg-gradient-to-b from-primary/90 to-primary/60 bg-clip-text text-transparent">
       Honestly, I have no idea what's cooking here! If something’s broken or needs fixing, just ping me and save me from blissful ignorance!
       </div> */}

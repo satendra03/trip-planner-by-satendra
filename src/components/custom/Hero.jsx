@@ -153,13 +153,13 @@ function Hero({ heroRef }) {
                 : "Plan a Trip, It's Free"}
             </Button>
           </Link>
-          <Link
+          {/* <Link
             target="_blank"
             rel="noopener noreferrer"
             to="https://www.buymeacoffee.com/satendra03"
           >
             <Button variant="secondary">Buy Me a Coffee</Button>
-          </Link>
+          </Link> */}
         </div>
         <div className="marquee relative flex w-[75vw] flex-col items-center justify-center overflow-hidden rounded-lg bg-background">
           <Marquee reverse pauseOnHover className="[--duration:60s]">
