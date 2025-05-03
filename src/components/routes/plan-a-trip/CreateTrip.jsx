@@ -217,8 +217,18 @@ function CreateTrip({createTripPageRef}) {
             </span>{" "}
             💳
           </h2>
-          <div className="options grid grid-cols-1 gap-5 md:grid-cols-3">
-            {SelectBudgetOptions.map((item) => {
+          {/* <div className="options grid grid-cols-1 gap-5 md:grid-cols-3"> */}
+          <Input
+            className="text-center"
+            placeholder="₹ 5000"
+            type="number"
+            min="1000"
+            max="100000"
+            // name="noOfDays"
+            required
+            onChange={(budget) => handleInputChange("Budget", budget.target.value)}
+          />
+            {/* {SelectBudgetOptions.map((item) => {
               return (
                 <div
                   onClick={(e) => handleInputChange("Budget", item.title)}
@@ -240,8 +250,8 @@ function CreateTrip({createTripPageRef}) {
                   <p className="bg-gradient-to-b from-primary/90 to-primary/60 bg-clip-text text-transparent">{item.desc}</p>
                 </div>
               );
-            })}
-          </div>
+            })} */}
+          {/* </div> */}
         </div>
 
         <div className="people">
