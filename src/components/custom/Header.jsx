@@ -21,8 +21,8 @@ function Header({headerRef}) {
     logout();
   };
   const LogIn = () => {
-    loginWithRedirect();
-    // loginWithPopup();
+    // loginWithRedirect();
+    loginWithPopup();
   };
 
   return (

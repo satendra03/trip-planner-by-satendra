@@ -6,6 +6,7 @@ export const RefProvider = (props) => {
   const holetsRef = useRef(null);
   const placesRef = useRef(null);
 
+
   return (
     <RefContext.Provider value={{ locationInfoRef, holetsRef, placesRef }}>
       {props.children}

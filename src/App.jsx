@@ -17,6 +17,8 @@ import toast from "react-hot-toast";
 import gsap from "gsap";
 import ProgressBar from "./components/constants/ProgressBar.jsx";
 import { useRefContext } from "./Context/RefContext/RefContext.jsx";
+import HotelDetails from "./components/routes/placesDetails/HotelDetails.jsx";
+import PlacesDetails from "./components/routes/placesDetails/PlacesDetails.jsx";
 
 function App() {
   const { user, isAuthenticated } = useContext(LogInContext);
@@ -27,6 +29,8 @@ function App() {
   const headerRef = useRef(null);
   const heroRef = useRef(null);
   const createTripPageRef = useRef(null);
+  const HotelDetailsPageRef = useRef(null);
+  const PlaceDetailsPageRef = useRef(null);
   const footerRef = useRef(null);
   const { locationInfoRef } = useRefContext();
 
@@ -86,6 +90,51 @@ function App() {
         .from(locationInfo, { opacity: 0, y: 100 });
     }
 
+    // Hotels-Details
+    const hotelDetails =
+      HotelDetailsPageRef?.current?.querySelector(".hotel-details");
+    const mapLocation =
+      HotelDetailsPageRef?.current?.querySelector(".map-location");
+    const hotelMap = HotelDetailsPageRef?.current?.querySelector(".hotel-map");
+    const nearbyPlaces =
+      HotelDetailsPageRef?.current?.querySelector(".nearby-places");
+    const placesList =
+      HotelDetailsPageRef?.current?.querySelector(".places-list");
+    if (hotelDetails && mapLocation && hotelMap && nearbyPlaces && placesList) {
+      timeline
+        .from(hotelDetails, { opacity: 0, y: 100 })
+        .from(mapLocation, { opacity: 0, y: 100 })
+        .from(hotelMap, { opacity: 0, y: 100 })
+        .from(nearbyPlaces, { opacity: 0, y: 100 })
+        .from(placesList, { opacity: 0, y: 100 });
+    }
+
+    // Places-Details
+    const placeDetails =
+      HotelDetailsPageRef?.current?.querySelector(".place-details");
+    const mapLocationPlace = HotelDetailsPageRef?.current?.querySelector(
+      ".map-location-place"
+    );
+    const placeMap = HotelDetailsPageRef?.current?.querySelector(".place-map");
+    const nearbyLocations =
+      HotelDetailsPageRef?.current?.querySelector(".nearby-locations");
+    const locationList =
+      HotelDetailsPageRef?.current?.querySelector(".location-list");
+    if (
+      placeDetails &&
+      mapLocationPlace &&
+      placeMap &&
+      nearbyLocations &&
+      locationList
+    ) {
+      timeline
+        .from(placeDetails, { opacity: 0, y: 100 })
+        .from(mapLocationPlace, { opacity: 0, y: 100 })
+        .from(placeMap, { opacity: 0, y: 100 })
+        .from(nearbyLocations, { opacity: 0, y: 100 })
+        .from(locationList, { opacity: 0, y: 100 });
+    }
+
     // Footer
     timeline.from(footerRef.current, { opacity: 0, y: 100 });
 
@@ -113,6 +162,26 @@ function App() {
             <Route
               path="/all-trips"
               element={isAuthenticated ? <Alltrips /> : <Hero />}
+            />
+            <Route
+              path="/details-for-hotel/:lat/:lng"
+              element={
+                isAuthenticated ? (
+                  <HotelDetails HotelDetailsPageRef={HotelDetailsPageRef} />
+                ) : (
+                  <Hero />
+                )
+              }
+            />
+            <Route
+              path="/details-for-place/:lat/:lng"
+              element={
+                isAuthenticated ? (
+                  <PlacesDetails PlaceDetailsPageRef={PlaceDetailsPageRef} />
+                ) : (
+                  <Hero />
+                )
+              }
             />
           </Routes>
         </div>

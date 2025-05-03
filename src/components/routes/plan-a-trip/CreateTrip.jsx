@@ -45,6 +45,8 @@ function CreateTrip({createTripPageRef}) {
     loginWithPopup();
   };
 
+  
+
   const SaveUser = async () => {
     const User = JSON.parse(localStorage.getItem("User"));
     const id = User?.email;
@@ -77,6 +79,24 @@ function CreateTrip({createTripPageRef}) {
     });
     setIsLoading(false);
     localStorage.setItem("Trip", JSON.stringify(TripData));
+    localStorage.setItem("UserSelection", JSON.stringify(formData));
+
+  //   const toDownload = {
+  //     userSelection: formData,
+  //     tripData: TripData,
+  //   }
+
+  // const fileData = new Blob([JSON.stringify(toDownload, null, 2)], { type: 'application/json' });
+  // const url = URL.createObjectURL(fileData);
+  // const link = document.createElement('a');
+  // link.href = url;
+  // link.download = `Trip_${id}.json`;
+  // document.body.appendChild(link);
+  // link.click();
+  // document.body.removeChild(link);
+  // URL.revokeObjectURL(url);
+
+
     navigate("/my-trips/" + id);
   };
 

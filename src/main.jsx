@@ -9,6 +9,7 @@ import { Toaster } from "react-hot-toast";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "./Context/DarkMode/ThemeProvider.jsx";
 import { RefProvider } from "./Context/RefContext/RefContext.jsx";
+import { CacheProvider } from "./Context/Cache/CacheContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -20,6 +21,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           redirect_uri: window.location.origin,
         }}
       >
+        <CacheProvider>
         <RefProvider>
           <LogInContextProvider>
             <ErrorBoundary>
@@ -28,6 +30,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             </ErrorBoundary>
           </LogInContextProvider>
         </RefProvider>
+        </CacheProvider>
       </Auth0Provider>
     </ThemeProvider>
   </BrowserRouter>

@@ -40,3 +40,21 @@ export const PHOTO_URL =
 export const getPlaceDetails = (data) =>
   axios.post(BASE_URL, data, configPlace);
 export const getCityDetails = (data) => axios.post(BASE_URL, data, configCity);
+
+export const getRoute = async (origin, destination) => {
+  try {
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/get-route`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ origin, destination }),
+    });
+
+    const data = await response.json(); 
+    return data;
+  } catch (error) {
+    console.error("Error fetching route:", error);
+    return null;
+  }
+};

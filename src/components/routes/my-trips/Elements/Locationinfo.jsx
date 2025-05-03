@@ -12,13 +12,14 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { useRefContext } from "@/Context/RefContext/RefContext";
+import { useCache } from "@/Context/Cache/CacheContext";
 
 function Locationinfo() {
   const { trip } = useContext(LogInContext);
   const [cityDets, setCityDets] = useState([]);
   const [photos, setPhotos] = useState("");
   const [Url, setUrl] = useState("");
-  const { locationInfoRef} = useRefContext();
+  const { locationInfoRef } = useRefContext();
 
   const [allImages, setAllImages] = useState([]);
 
@@ -83,6 +84,72 @@ function Locationinfo() {
     const url = PHOTO_URL.replace("{replace}", photos);
     setUrl(url);
   }, [photos]);
+
+  function getCheckinAndCheckout_MMDDYYYY(daysToStay) {
+    daysToStay = parseInt(daysToStay, 10); // 👈 fix here
+
+    const today = new Date();
+    const checkoutDate = new Date(today.getTime());
+    checkoutDate.setDate(today.getDate() + daysToStay);
+
+    const formatToMMDDYYYY = (date) => {
+      const mm = String(date.getMonth() + 1).padStart(2, "0");
+      const dd = String(date.getDate()).padStart(2, "0");
+      const yyyy = date.getFullYear();
+      return `${mm}${dd}${yyyy}`;
+    };
+
+    const checkin = formatToMMDDYYYY(today);
+    const checkout = formatToMMDDYYYY(checkoutDate);
+
+    return { checkin, checkout };
+  }
+
+  function getAdultsAndChildren(peopleString) {
+    switch (peopleString) {
+      case "1 Person":
+        return { adults: 1, children: 0, rooms: 1 };
+
+      case "2 People":
+        return { adults: 2, children: 0, rooms: 1 }; // assume 2 adults, no children
+
+      case "3 to 5 People":
+        return { adults: 2, children: 2, rooms: 1 }; // assume average group of 4: 2 adults + 2 children
+
+      case "5 to 10 People":
+        return { adults: 8, children: 0, rooms: 2 }; // assume 8 total: 8 adults + 0 children
+
+      default:
+        return { adults: 2, children: 0, rooms: 1 }; // fallback default
+    }
+  }
+
+  const {
+    // checkInDate,
+    setCheckInDate,
+    // checkOutDate,
+    setCheckOutDate,
+    setAdults,
+    setChildrenCount,
+    setRooms,
+    // adults,
+    // childrenCount,
+    // rooms,
+  } = useCache();
+
+  useEffect(() => {
+    const { checkin, checkout } = getCheckinAndCheckout_MMDDYYYY(
+      trip?.userSelection?.noOfDays
+    );
+    const { adults, children, rooms } = getAdultsAndChildren(
+      trip?.userSelection?.People
+    );
+    setCheckInDate(checkin);
+    setCheckOutDate(checkout);
+    setAdults(adults);
+    setChildrenCount(children);
+    setRooms(rooms);
+  }, []);
 
   return (
     <div ref={locationInfoRef} className="my-1 md:my-5">
